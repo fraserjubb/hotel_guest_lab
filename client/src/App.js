@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import './App.css';
 
 import { getBookings } from "./BookingsService";
+import GuestList from "./GuestList"; 
 
 function App() {
   
@@ -15,18 +16,8 @@ function App() {
 
 
   return (
-        <div>
-          {guestBookings.map((guest)=> {
-            return (
-              <>
-              <p>Guest: {guest.forename} {guest.surname}</p>
-              <p>Contact Email: {guest.email}</p>
-              </>
-            )
-          })}
-        </div>
-
-  );
+    <GuestList guestBookings={guestBookings}></GuestList>
+  )
 }
 
 export default App;
